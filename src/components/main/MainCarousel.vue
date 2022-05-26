@@ -8,7 +8,6 @@
           class="carouselContainer"
           v-if="(index + 1) % columns === 1 || columns === 1"
           :key="index"
-          style="margin-bottom: 50px; background-color: black"
         >
           <v-row class="flex-nowrap" style="height: 100%">
             <template v-for="(n, i) in columns">
@@ -169,6 +168,7 @@ export default {
 }
 
 .cardCar:hover span {
+  word-break: keep-all;
   visibility: visible;
   opacity: 1;
   top: 60%;
@@ -178,7 +178,7 @@ export default {
 
 .cardCar button {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 10%;
   z-index: 2;
   visibility: hidden;
@@ -212,6 +212,6 @@ export default {
 }
 
 .carouselContainer * {
-  background-color: black;
+  background-color: transparent;
 }
 </style>

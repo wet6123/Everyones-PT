@@ -132,6 +132,9 @@ export default {
 .playBtn:hover {
   color: var(--sub-text-color);
 }
+.allThing {
+  margin-bottom: 20px;
+}
 
 @media screen and (max-width: 768px) {
   .allThing {
