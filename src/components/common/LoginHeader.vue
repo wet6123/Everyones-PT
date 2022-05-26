@@ -2,7 +2,7 @@
   <v-app>
     <div>
       <v-app-bar app flat>
-        <a href="/" class="ssafit"> &nbsp;SSAFIT &nbsp; </a>
+        <a href="/" class="ssafit"> &nbsp;모두의 PT &nbsp; </a>
         <v-spacer></v-spacer>
         <!-- 다크 모드-->
         <div>
