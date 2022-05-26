@@ -2,12 +2,7 @@
   <v-app>
     <div>
       <v-app-bar app flat>
-        <a href="/" class="ssafit"> &nbsp;SSAFIT &nbsp; </a
-        ><img
-          style="width: 55px"
-          class="run"
-          src="https://img.icons8.com/stickers/100/000000/exercise-skin-type-1.png"
-        />
+        <a href="/" class="ssafit"> &nbsp;SSAFIT &nbsp; </a>
         <v-spacer></v-spacer>
         <!-- 다크 모드-->
         <div>
@@ -229,8 +224,13 @@ export default {
 .main-divider {
   margin: 20px;
 }
+
+.a {
+  text-decoration: none;
+}
+
 .ssafit {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     90deg,
     red,
     orange,
@@ -241,7 +241,8 @@ export default {
     purple
   );
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; */
+  color: rgb(248, 47, 98);
 
   font-weight: bold;
   font-size: 40px;

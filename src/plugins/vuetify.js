@@ -15,6 +15,7 @@ export default new Vuetify({
         dark : {
             primary: '#3c3e4d',
             background: '#3c3e4d',
+            fader: '#3c3e4d',
         }
     },
 });

@@ -1,13 +1,8 @@
 <template>
   <v-app>
     <div>
-      <v-app-bar app color="white" flat>
+      <v-app-bar app flat>
         <a href="/" class="ssafit"> &nbsp;SSAFIT &nbsp;</a>
-        <img
-          style="width: 55px"
-          class="run"
-          src="https://img.icons8.com/stickers/100/000000/exercise-skin-type-1.png"
-        />
         <v-spacer></v-spacer>
         <v-btn to="/user/login" color="grey" class="login"> Log In </v-btn>
         <div>
@@ -122,14 +117,17 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.main {
+/* .main {
   background-color: grey;
-}
+} */
 .main-divider {
   margin: 20px;
 }
+.a {
+  text-decoration: none;
+}
 .ssafit {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     90deg,
     red,
     orange,
@@ -140,7 +138,8 @@ export default {
     purple
   );
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; */
+  color: rgb(248, 47, 98);
 
   font-weight: bold;
   font-size: 40px;
