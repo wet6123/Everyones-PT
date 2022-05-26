@@ -32,7 +32,7 @@ export default {
       shownPhotos: [], //보여주는 비디오 배열
       current: 0, //지금 보여주는 비디오 개수
       loaded: 0, //지금까지 로딩된 비디오 배열의 비디오 수 => 이거를 howMany씩 잘라서 shownPhotos에 넣는다
-      howMany: 15, //한번에 몇개 영상 갱신?
+      howMany: 12, //한번에 몇개 영상 갱신?
     };
   },
   props: {
