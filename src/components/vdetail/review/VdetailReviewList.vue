@@ -104,9 +104,9 @@
 
             <!-- 답글리스트 -->
             <b-tr>
-              <b-link @click="toggleShowReply(review.id)"
-                >답글 {{ replyNum[review.id] }}개</b-link
-              >
+              <button @click="toggleShowReply(review.id)">
+                답글 {{ replyNum[review.id] }}개
+              </button>
 
               <div class="reply" :id="review.id" style="display: none">
                 <div v-if="replyNum[review.id] == 0">
@@ -223,13 +223,12 @@ export default {
       this.filleditReview[review.id] = review.content;
       this.filleditRate[review.id] = review.rate / 2;
       let tmp = this.editReview[review.id];
-      console.log(tmp)
-      if(tmp === undefined) {
+      console.log(tmp);
+      if (tmp === undefined) {
         this.editReview[review.id] = false;
-      console.log(this.editReview[review.id]);
-
+        console.log(this.editReview[review.id]);
       }
-      this.editReview.splice(review.id, 1, !tmp? true : false);
+      this.editReview.splice(review.id, 1, !tmp ? true : false);
       console.log(this.editReview[review.id]);
     },
     toggleCreateReply(index) {
