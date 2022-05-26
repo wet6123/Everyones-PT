@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="allThing">
     <div class="embed-youtube">
       <div>
         <img
@@ -134,8 +134,8 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .Ytitle {
-    visibility: hidden;
+  .allThing {
+    display: none;
   }
 }
 </style>

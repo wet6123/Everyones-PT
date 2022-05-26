@@ -191,6 +191,7 @@ export default {
 }
 
 .card {
+  background-color: transparent;
   max-width: 370px;
   flex-grow: 1;
   display: inline-block;
@@ -240,7 +241,7 @@ export default {
   visibility: visible;
   opacity: 1;
   top: 60%;
-  font-size: 23px;
+  font-size: calc(2vw);
   transition: 0.3s;
 }
 

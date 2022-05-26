@@ -136,6 +136,7 @@ export default {
 }
 
 .card {
+  background-color: transparent !important;
   max-width: 370px;
   flex-grow: 1;
   display: inline-block;
@@ -153,11 +154,13 @@ export default {
 }
 
 .card img {
+  border-radius: 7px;
   width: 100%;
   transition: 0.3s;
 }
 
 .card:hover img {
+  border-radius: 12px;
   width: 100%;
   filter: brightness(35%);
   transition: 0.3s;
