@@ -10,6 +10,8 @@ const REST_API = `http://localhost:9999`;
 
 export default new Vuex.Store({
   state: {
+    // 메인 비디오 관련
+    mainVideo: {},
     // 비디오 관련
     videos: [],
     video: {},
@@ -56,6 +58,11 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    // 메인 비디오 관련
+    GET_MAINVIDEO(state, payload) {
+      state.mainVideo = payload;
+    },
+
     // 비디오 관련
     GET_VIDEOS(state, payload) {
       state.videos = payload;
@@ -225,7 +232,9 @@ export default new Vuex.Store({
             ans.forEach((element) => {
               element.title = lodash.unescape(element.title); //title decoding
               if (element.title.length > 27) {
-                element.title = element.title.substr(0, 27) + "...";
+                element.shortTitle = element.title.substr(0, 27) + "...";
+              } else {
+                element.shortTitle = element.title;
               }
             });
             res.data = ans;
@@ -300,8 +309,7 @@ export default new Vuex.Store({
           "access-token": localStorage.getItem("access-token"),
         },
       })
-        .then(() => {
-        })
+        .then(() => {})
         .catch((err) => {
           console.log(err);
         });
@@ -658,7 +666,7 @@ export default new Vuex.Store({
         },
       })
         .then(() => {
-          alert("회원탈퇴 되었습니다.")
+          alert("회원탈퇴 되었습니다.");
           commit("USER_LOGOUT");
           router.push({ name: "main" });
         })

@@ -18,17 +18,19 @@
                     <v-row class="fill-height" align="end" justify="center">
                       <div class="display-3, cardContainer">
                         <span class="cardCar">
-                          <router-link
+                          <!-- <router-link
                             :to="`/vdetail/${recommend[index + i].id}`"
                             style="color: black"
-                          >
+                          > -->
+                          <div @click="getMainVideo(recommend[index + i])">
                             <img
                               :src="recommend[index + i].url"
                               alt=""
                               style="width: 100%"
                             />
-                            <span>{{ recommend[index + i].title }}</span>
-                          </router-link>
+                            <span>{{ recommend[index + i].shortTitle }}</span>
+                          </div>
+                          <!-- </router-link> -->
                           <button @click="like(recommend[index + i].id)">
                             <font-awesome-icon
                               icon="fa-solid fa-heart"
@@ -73,14 +75,18 @@ export default {
 
       return 1;
     },
-    ...mapState(["recommend"]), //여기에 state 더 불러와줘야함
-    ...mapState(["liked"]),
+    ...mapState(["recommend", "liked", "mainVideo"]), //여기에 state 더 불러와줘야함
   },
   methods: {
+    getMainVideo(payload) {
+      this.$store.commit("GET_MAINVIDEO", payload);
+    },
     getPhotos: function () {
       this.$store
         .dispatch("getRecommend")
-        .then(() => {})
+        .then(() => {
+          this.getMainVideo(this.recommend[0]);
+        })
         .catch(() => {
           console.log("getRecommend err");
         });
