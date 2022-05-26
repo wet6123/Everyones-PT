@@ -51,8 +51,8 @@ export default {
   position: relative;
   border: none;
   display: inline-block;
-  min-width: 110px;
-  padding: 10px 30px;
+  min-width: 90px;
+  padding: 8px 16px;
   border-radius: 15px;
   font-family: "paybooc-Light", sans-serif;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -60,7 +60,7 @@ export default {
   font-weight: 600;
   transition: 0.25s;
 
-  background-color: rgb(255, 255, 255);
+  background-color: var(--v-secondary-base);
   color: #1e6b7b;
 }
 .partBtn:hover {
@@ -74,5 +74,25 @@ export default {
 
 .btnContainer {
   margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .partBtn {
+    margin: 5px 5px;
+    position: relative;
+    border: none;
+    display: inline-block;
+    min-width: 60px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+
+    background-color: var(--v-primary-base);
+    color: #1e6b7b;
+  }
 }
 </style>
