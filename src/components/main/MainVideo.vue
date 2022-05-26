@@ -91,7 +91,7 @@ export default {
     font-weight: 600;
     transition: 0.25s;
 
-    background-color: var(--v-primary-base);
+    background-color: var(--v-secondary-base);
     color: #1e6b7b;
   }
 }

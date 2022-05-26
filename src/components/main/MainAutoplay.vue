@@ -53,7 +53,6 @@ export default {
   },
   methods: {
     hideimg() {
-      console.log(this.mainVideo);
       setTimeout(() => (this.hide = true), 4000);
     },
   },

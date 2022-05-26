@@ -260,5 +260,11 @@ a:hover {
   .hamburgerBtn {
     margin: 0px 15px;
   }
+  .login {
+    margin-left: 10px;
+    color: white;
+    font-size: 10px;
+    width: 60px;
+  }
 }
 </style>

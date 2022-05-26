@@ -3,7 +3,7 @@
 <template>
   <div class="container">
     <!-- 검색창 -->
-    <form @submit.prevent>
+    <form @submit.prevent style="width: 100%">
       <input
         class="view"
         type="text"
