@@ -19,7 +19,7 @@
       <iframe
         width="700"
         height="440"
-        :src="`https://www.youtube.com/embed/${videos[0].videoKey}?autoplay=1&mute=1&controls=0&disablekb=1&modestbranding=1&loop=1&start=20`"
+        :src="`https://www.youtube.com/embed/${videos[0].videoKey}?autoplay=1&mute=1&controls=0&disablekb=1&modestbranding=1&loop=1&playlist=${videos[0].videoKey}&start=20end=300`"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
