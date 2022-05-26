@@ -123,7 +123,7 @@ export default {
 .main-divider {
   margin: 20px;
 }
-.a {
+a:hover {
   text-decoration: none;
 }
 .ssafit {

@@ -225,7 +225,7 @@ export default {
   margin: 20px;
 }
 
-.a {
+a:hover {
   text-decoration: none;
 }
 
