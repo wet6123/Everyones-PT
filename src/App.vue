@@ -14,6 +14,7 @@
 import LoginHeader from "@/components/common/LoginHeader.vue";
 import HeaderNav from "@/components/common/HeaderNav.vue";
 import FooterNav from "@/components/common/FooterNav.vue";
+
 import { mapState } from "vuex";
 export default {
   components: {

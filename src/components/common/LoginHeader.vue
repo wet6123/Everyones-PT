@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div>
-      <v-app-bar app color="white" flat>
+      <v-app-bar app flat>
         <a href="/" class="ssafit"> &nbsp;SSAFIT &nbsp; </a
         ><img
           style="width: 55px"
@@ -9,12 +9,28 @@
           src="https://img.icons8.com/stickers/100/000000/exercise-skin-type-1.png"
         />
         <v-spacer></v-spacer>
+        <!-- 다크 모드-->
+        <div>
+          <v-tooltip v-if="!$vuetify.theme.dark" bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" color="info" small fab @click="darkMode">
+                <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+              </v-btn>
+            </template>
+            <span>Dark Mode On</span>
+          </v-tooltip>
+
+          <v-tooltip v-else bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" color="info" small fab @click="darkMode">
+                <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
+              </v-btn>
+            </template>
+            <span>Dark Mode Off</span>
+          </v-tooltip>
+        </div>
         <!-- ㅇㅇ님 안녕하세요 메시지 -->
         <h6 class="mt-3 message" style="margin: 10px 20px">
-          <img
-            style="width: 40px"
-            src="https://img.icons8.com/stickers/100/000000/teddy-bear.png"
-          />
           {{ userinfo.nickname }}님 안녕하세요
           <b-icon
             icon="star-fill"
@@ -128,6 +144,7 @@ import { mapState } from "vuex";
 
 export default {
   data: () => ({
+    toggle_val: [],
     isClosed: true,
     links: [
       {
@@ -182,6 +199,9 @@ export default {
     hamburgerMenu() {
       this.isClosed = !this.isClosed;
     },
+    darkMode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    },
   },
 };
 </script>
@@ -203,9 +223,9 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.main {
+/* .main {
   background-color: grey;
-}
+} */
 .main-divider {
   margin: 20px;
 }
