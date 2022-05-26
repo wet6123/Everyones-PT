@@ -3,7 +3,7 @@
     <div class="embed-youtube">
       <div>
         <img
-          :src="`${videos[0].url}`"
+          :src="`${recommend[0].url}`"
           alt=""
           :class="[{ autoimg: true }, { hideIt: hide }]"
           @load="hideimg()"
@@ -11,15 +11,24 @@
       </div>
       <div class="fader"></div>
       <div class="noTouch"></div>
-      <div class="channelAndTitle">
+      <div :class="[{ channelAndTitle: true }, { hideIt: !hide }]">
         <!-- channel & title -->
-        <div class="Ychannel">{{ videos[0].channelName }}</div>
-        <div class="Ytitle">{{ videos[0].title }}</div>
+
+        <div class="Ychannel">
+          <router-link :to="`/vdetail/${recommend[0].id}`">
+            <button class="playBtn">
+              <font-awesome-icon icon="fas fa-play-circle" />
+            </button>
+          </router-link>
+
+          {{ recommend[0].channelName }}
+        </div>
+        <div class="Ytitle">{{ recommend[0].title }}</div>
       </div>
       <iframe
         width="700"
         height="440"
-        :src="`https://www.youtube.com/embed/${videos[0].videoKey}?autoplay=1&mute=1&controls=0&disablekb=1&modestbranding=1&loop=1&playlist=${videos[0].videoKey}&start=20end=300`"
+        :src="`https://www.youtube.com/embed/${recommend[0].videoKey}?autoplay=1&mute=1&controls=0&disablekb=1&modestbranding=1&loop=1&playlist=${recommend[0].videoKey}&start=20end=300`"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -40,7 +49,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["videos"]),
+    ...mapState(["recommend"]),
   },
   methods: {
     hideimg() {
@@ -64,7 +73,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 2;
   transition: 1s;
 }
 .hideIt {
@@ -95,18 +104,37 @@ export default {
 }
 .channelAndTitle {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 5%;
-  z-index: 2;
+  z-index: 4;
+
+  /* no drag */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .Ychannel {
-  font-size: 60px;
+  font-size: calc(0.75em + 4vw);
   color: var(--main-text-color);
 }
 .Ytitle {
+  visibility: visible;
   word-break: keep-all;
-  font-size: 30px;
+  font-size: calc(2vw);
   color: var(--sub-text-color);
-  width: 40%;
+  width: 50%;
+}
+.playBtn {
+  color: var(--main-text-color);
+}
+.playBtn:hover {
+  color: var(--sub-text-color);
+}
+
+@media screen and (max-width: 768px) {
+  .Ytitle {
+    visibility: hidden;
+  }
 }
 </style>
