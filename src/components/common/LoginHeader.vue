@@ -314,6 +314,7 @@ a:hover {
   .hamburger {
     display: block;
     font-size: 25px;
+    margin-left: 20px;
   }
   .hide {
     visibility: hidden;
