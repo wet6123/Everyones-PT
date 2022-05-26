@@ -3,10 +3,10 @@
     <div class="embed-youtube">
       <div>
         <img
-          :src="`${recommend[0].url}`"
+          :src="`${mainVideo.url}`"
           alt=""
           :class="[{ autoimg: true }, { hideIt: hide }]"
-          @load="hideimg()"
+          @load="hideimg"
         />
       </div>
       <div class="fader"></div>
@@ -15,20 +15,20 @@
         <!-- channel & title -->
 
         <div class="Ychannel">
-          <router-link :to="`/vdetail/${recommend[0].id}`">
+          <router-link :to="`/vdetail/${mainVideo.id}`">
             <button class="playBtn">
               <font-awesome-icon icon="fas fa-play-circle" />
             </button>
           </router-link>
 
-          {{ recommend[0].channelName }}
+          {{ mainVideo.channelName }}
         </div>
-        <div class="Ytitle">{{ recommend[0].title }}</div>
+        <div class="Ytitle">{{ mainVideo.title }}</div>
       </div>
       <iframe
         width="700"
         height="440"
-        :src="`https://www.youtube.com/embed/${recommend[0].videoKey}?autoplay=1&mute=1&controls=0&disablekb=1&modestbranding=1&loop=1&playlist=${recommend[0].videoKey}&start=20end=300`"
+        :src="`https://www.youtube.com/embed/${mainVideo.videoKey}?autoplay=1&mute=1&controls=0&disablekb=1&modestbranding=1&loop=1&playlist=${mainVideo.videoKey}&start=20end=300`"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -49,10 +49,11 @@ export default {
     };
   },
   computed: {
-    ...mapState(["recommend"]),
+    ...mapState(["mainVideo"]),
   },
   methods: {
     hideimg() {
+      console.log(this.mainVideo);
       setTimeout(() => (this.hide = true), 4000);
     },
   },
