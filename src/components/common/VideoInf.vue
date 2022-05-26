@@ -191,6 +191,7 @@ export default {
 }
 
 .card {
+  background-color: transparent;
   max-width: 370px;
   flex-grow: 1;
   display: inline-block;
@@ -221,9 +222,8 @@ export default {
 }
 
 .card span {
-  height: 70px;
+  height: 2.7em;
   overflow: hidden;
-
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -237,16 +237,17 @@ export default {
 }
 
 .card:hover span {
+  word-break: keep-all;
   visibility: visible;
   opacity: 1;
   top: 60%;
-  font-size: 23px;
+  font-size: calc(1em + 0.5vw);
   transition: 0.3s;
 }
 
 .card button {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 10%;
   z-index: 2;
   visibility: hidden;
