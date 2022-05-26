@@ -53,6 +53,7 @@ export default {
   },
   methods: {
     hideimg() {
+      this.hide = false;
       setTimeout(() => (this.hide = true), 4000);
     },
   },
@@ -138,6 +139,7 @@ export default {
 @media screen and (max-width: 768px) {
   .allThing {
     display: none;
+    transition: 0.3s;
   }
 }
 </style>
