@@ -86,8 +86,8 @@ export default {
   top: 81%;
   background: linear-gradient(
     to top,
-    var(--background-color),
-    var(--background-color) 10%,
+    var(--v-primary-base),
+    var(--v-primary-base) 10%,
     transparent
   );
   width: 100%;

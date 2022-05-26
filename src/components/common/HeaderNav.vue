@@ -4,6 +4,26 @@
       <v-app-bar app flat>
         <a href="/" class="ssafit"> &nbsp;SSAFIT &nbsp;</a>
         <v-spacer></v-spacer>
+        <!-- 다크 모드-->
+        <div>
+          <v-tooltip v-if="!$vuetify.theme.dark" bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" color="info" small fab @click="darkMode">
+                <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+              </v-btn>
+            </template>
+            <span>Dark Mode On</span>
+          </v-tooltip>
+
+          <v-tooltip v-else bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" color="info" small fab @click="darkMode">
+                <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
+              </v-btn>
+            </template>
+            <span>Dark Mode Off</span>
+          </v-tooltip>
+        </div>
         <v-btn to="/user/login" color="grey" class="login"> Log In </v-btn>
         <div>
           <button @click="hamburgerMenu" class="hamburgerBtn">
@@ -24,9 +44,9 @@
                   class="router"
                   link
                 >
-                  <v-list-item-icon>
-                    <img :src="`${link.icon}`" style="width: 40px" />
-                  </v-list-item-icon>
+                  <v-list-item-content>
+                    <font-awesome-icon :icon="`${link.icon}`" />
+                  </v-list-item-content>
                   <v-list-item-content>
                     {{ link.title }}
                   </v-list-item-content>
@@ -41,9 +61,9 @@
                   class="router"
                   link
                 >
-                  <v-list-item-icon>
-                    <img :src="`${link.icon}`" style="width: 40px" />
-                  </v-list-item-icon>
+                  <v-list-item-content>
+                    <font-awesome-icon :icon="`${link.icon}`" />
+                  </v-list-item-content>
                   <v-list-item-content>
                     {{ link.title }}
                   </v-list-item-content>
@@ -71,30 +91,33 @@ export default {
       {
         title: "홈",
         router: "/",
-        icon: "https://img.icons8.com/stickers/100/000000/home-page.png",
+        icon: "fas fa-home",
       },
       {
         title: "검색",
         router: "/search",
-        icon: "https://img.icons8.com/stickers/100/000000/search.png",
+        icon: "fas fa-search",
       },
     ],
     links2: [
       {
         title: "찜리스트",
         router: "/vlist/like",
-        icon: "https://img.icons8.com/stickers/100/000000/like.png",
+        icon: "far fa-heart",
       },
       {
         title: "시청기록",
         router: "/vlist/watched",
-        icon: "https://img.icons8.com/stickers/100/000000/laptop-play-video.png",
+        icon: "far fa-clock",
       },
     ],
   }),
   methods: {
     hamburgerMenu() {
       this.isClosed = !this.isClosed;
+    },
+    darkMode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };
@@ -147,10 +170,10 @@ a:hover {
   font-size: 25px;
 }
 .router {
-  color: black;
   text-decoration: none;
 }
 .login {
+  margin-left: 20px;
   color: white;
   font-size: 20px;
 }
